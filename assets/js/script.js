@@ -1,1 +1,1 @@
-let food =  "spaghetti & and meatballs"
+let food =  "spaghetti & meatballs"
