@@ -1,13 +1,15 @@
+var drinkName = document.querySelector('#drinkInput').value;
 var submitDrinkEl = document.querySelector('#drinkInputButton');
 
 
 
-var drinkName = 'margarita'
+//var drinkName = 'margarita'
 
 //If a valid city name, change all the history buttons, call "getCityData"
 var drinkSubmitHandler = function (event) {
     event.preventDefault();
     console.log("TEST")
+    console.log(drinkName)
     //var drinkName = nameInputEl.value;
     var apiDrink = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+drinkName
     fetch(apiDrink).then(function (response) {
