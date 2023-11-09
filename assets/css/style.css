@@ -1,0 +1,71 @@
+/* Style for the first search bar */
+body {
+    background-color: rgba(128, 128, 216, 0.468);
+  }
+h1 {
+    font-family: Arial, sans-serif; 
+    font-size: 24px; 
+    color: #060606; 
+    text-align: center; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+}
+
+
+
+
+.search-1 {
+    width: 300px; 
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 5px;
+
+  }
+  
+  /* Style for the first search input field */
+  .foodInput {
+    flex: 1; 
+    border: none; 
+    padding: 5px; 
+    outline: none; 
+  }
+  
+  /* Style for the first search button */
+  .recipeBtn1 {
+    background-color: #0077b6; 
+    color: #fff;
+    border: none; 
+    border-radius: 5px; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+  }
+  
+  /* Style for the second search bar */
+  .search-2 {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  .drinkInput {
+    flex: 1;
+    border: none;
+    padding: 5px;
+    outline: none;
+  }
+  
+  .recipeBtn2 {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
