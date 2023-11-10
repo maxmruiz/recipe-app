@@ -11,6 +11,6 @@ button.addEventListener("click", () => {
       return data.json();
     })
     .then((data) => {
-      console.log(data);
+      // console.log(data);
     });
 });
