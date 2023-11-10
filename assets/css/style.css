@@ -1,94 +1,90 @@
 /* Style for the first search bar */
 body {
-    background-color: rgba(128, 128, 216, 0.468);
-  }
-h1 {
-    font-family: 'Brush Script MT',' Brush Script Std', 'cursive'; 
-    font-size: 24px; 
-    color: #060606; 
-    text-align: center; 
-    text-transform: uppercase; 
-    font-weight: bold; 
-    margin-bottom: 10px; 
+  background-color: rgba(128, 128, 216, 0.468);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
-img {
-    border: 2px solid #0077b6; 
-    max-width: 100%;
-    height: auto; 
-  }
+h1 {
+  font-family: "Brush Script MT", " Brush Script Std", "cursive";
+  font-size: 24px;
+  color: #060606;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
+.food-image {
+  width: 300x;
+  height: 300px;
+}
+.food-container{
+  width:100%;
+}
+.food-card {
+  display: flex;
+  gap: 40px;
+  justify-content:space-around;
+  width: 100%;
+}
 
+.recipe{
+  border:2px solid black;
+  min-width:300px;
+}
 
 .search-1 {
-    width: 300px; 
-    display: flex;
-    align-items: center;
-    border: 1px solid #181717; 
-    border-radius: 5px; 
-    padding: 5px;
-    margin-left: 100px; ;
-  }
-  
-  /* Style for the first search input field */
-  .foodInput {
-    flex: 1; 
-    border: none; 
-    padding: 5px; 
-    outline: none; 
-  }
-  
-  /* Style for the first search button */
-  .searchBtn1 {
-    background-color: #0077b6; 
-    color: #fff;
-    border: none; 
-    border-radius: 5px; 
-    padding: 5px 10px; 
-    cursor: pointer; 
-  }
-  
-  /* Style for the second search bar */
-  .search-2 {
-    width: 300px;
-    display: flex;
-    align-items: center;
-    border: 1px solid #161515;
-    border-radius: 5px;
-    padding: 5px;
-    margin-left: 700px;
-    margin-top: -120px;
-  }
-  
-  .drinkInput {
-    flex: 1;
-    border: none;
-    padding: 5px;
-    outline: none;
-  }
-  
-  .searchBtn2 {
-    background-color: #ff6600;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  ul {
-    width: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border: 1px solid #080808;
-    border-radius: 5px;
-    padding: 30px;
-    margin-bottom: -200%;
-    padding-right: 65%;
-    padding-bottom: -10px;
-    margin-top: 200px;
-    margin-right: 50px;
-  }
-  
-    
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  border: 2px solid #181717;
+  border-radius: 5px;
+  padding: 20px;
+}
 
-  
+/* Style for the first search input field */
+.foodInput {
+  border: none;
+  padding: 5px;
+  outline: none;
+}
+
+/* Style for the first search button */
+.searchBtn1 {
+  background-color: #0077b6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Style for the second search bar */
+.search-2 {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #161515;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.drinkInput {
+  flex: 1;
+  border: none;
+  padding: 5px;
+  outline: none;
+}
+
+.searchBtn2 {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
