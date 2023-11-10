@@ -3,7 +3,8 @@ food = "cereal";
 let foodInput = document.getElementById("foodInput");
 let button = document.querySelector(".searchBtn1");
 
-button.addEventListener("click", () => {
+button.addEventListener("click", (e) => {
+  e.preventDefault()
   fetch(
     `https://api.edamam.com/api/recipes/v2?type=public&q=${foodInput.value}&app_id=9cbc2130&app_key=${API_KEY}`
   )
@@ -11,6 +12,6 @@ button.addEventListener("click", () => {
       return data.json();
     })
     .then((data) => {
-      // console.log(data);
+      console.log(data);
     });
 });
