@@ -40,6 +40,8 @@ var drinkSubmitHandler = function (event) {
                         image: data.drinks[0][`strDrinkThumb`],
                     };
                     console.log(ObjectDrink.ingredients)
+                    imageEl.src = ObjectDrink.image;
+
                 }
                 else{
                     ObjectDrink.ingredients.push(data.drinks[0][`strIngredient${i}`])
