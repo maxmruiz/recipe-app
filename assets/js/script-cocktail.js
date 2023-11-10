@@ -1,7 +1,8 @@
 var drinkNameEl = document.querySelector('#drinkInput');
 var submitDrinkEl = document.querySelector('#drinkInputButton');
-var ingredientsEl = document.querySelector('.ingredients');
-
+var ingredientsEl = document.querySelector('#ingredients-list');
+var descriptionEl = document.querySelector('#cocktail-description');
+var imageEl = document.querySelector('.cocktail-image');
 
 //If a valid cocktail name, change all the history buttons, call "getDrinkRecipe"
 var drinkSubmitHandler = function (event) {
@@ -34,9 +35,13 @@ var drinkSubmitHandler = function (event) {
                     var ObjectDrink = {
                         name: drinkName,
                         ingredients: [data.drinks[0][`strIngredient${i}`]],
-                        amounts: [data.drinks[0][`strMeasure${i}`]]
+                        amounts: [data.drinks[0][`strMeasure${i}`]],
+                        description:data.drinks[0][`strInstructions`],
+                        image: data.drinks[0][`strDrinkThumb`],
                     };
                     console.log(ObjectDrink.ingredients)
+                    imageEl.src = ObjectDrink.image;
+
                 }
                 else{
                     ObjectDrink.ingredients.push(data.drinks[0][`strIngredient${i}`])
@@ -69,16 +74,24 @@ var displayCocktailInformation = function (ObjectDrink) {
   
     for (var i = 0; i < ObjectDrink.ingredients.length; i++) {
       //var repoName = repos[i].owner.login + '/' + repos[i].name;
-  
-      var cocktailListEl = document.createElement('p');
-      //repoEl.classList = 'list-item flex-row justify-space-between align-center';
-      //cocktailListEl.setAttribute('text', './single-repo.html?repo=' + repoName);
-      cocktailListEl.textContent = ObjectDrink.ingredients[i]
-  
-      //var titleEl = document.createElement('span');
-      //titleEl.textContent = repoName;
-    console.log(cocktailListEl.textContent)
-      cocktailListEl.appendChild(ingredientsEl);
+      if(ObjectDrink.ingredients[i]==null){
+          continue
+      }
+
+      var cocktailListEl = document.createElement('li');
+      cocktailListEl.textContent = ObjectDrink.ingredients[i]+" ("+ObjectDrink.amounts[i]+")"
+     
+      console.log(cocktailListEl.textContent)
+      ingredientsEl.appendChild(cocktailListEl);
+
+
+      var cocktailDescriptionEl = document.createElement('li');
+      cocktailDescriptionEl.textContent = ObjectDrink.description
+     
+      console.log(cocktailDescriptionEl.textContent)
+      descriptionEl.appendChild(cocktailDescriptionEl);
+
+
   
       //var statusEl = document.createElement('span');
       //statusEl.classList = 'flex-row align-center';
