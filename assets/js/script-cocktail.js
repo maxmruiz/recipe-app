@@ -91,8 +91,8 @@ var displayCocktailInformation = function (ObjectDrink) {
       console.log(cocktailDescriptionEl.textContent)
       descriptionEl.appendChild(cocktailDescriptionEl);
 
-
-  
+      ingredientsEl.style.display = 'block';
+      descriptionEl.style.display = 'block';
       //var statusEl = document.createElement('span');
       //statusEl.classList = 'flex-row align-center';
   
