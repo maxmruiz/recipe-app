@@ -4,6 +4,7 @@ var ingredientsEl = document.querySelector('#ingredients-list');
 var descriptionEl = document.querySelector('#cocktail-description');
 var imageEl = document.querySelector('.cocktail-image');
 
+
 //If a valid cocktail name, change all the history buttons, call "getDrinkRecipe"
 var drinkSubmitHandler = function (event) {
     event.preventDefault();
@@ -65,6 +66,15 @@ var drinkSubmitHandler = function (event) {
 
 
 var displayCocktailInformation = function (ObjectDrink) {
+    ingredientsEl.innerHTML = ''; 
+    descriptionEl.innerHTML = '';
+
+    var cocktailDescriptionEl = document.createElement('li');
+    cocktailDescriptionEl.textContent = ObjectDrink.description
+   
+    console.log(cocktailDescriptionEl.textContent)
+    descriptionEl.appendChild(cocktailDescriptionEl);
+
     // if (repos.length === 0) {
     //   repoContainerEl.textContent = 'No repositories found.';
     //   return;
@@ -85,11 +95,8 @@ var displayCocktailInformation = function (ObjectDrink) {
       ingredientsEl.appendChild(cocktailListEl);
 
 
-      var cocktailDescriptionEl = document.createElement('li');
-      cocktailDescriptionEl.textContent = ObjectDrink.description
-     
-      console.log(cocktailDescriptionEl.textContent)
-      descriptionEl.appendChild(cocktailDescriptionEl);
+      
+  
 
       ingredientsEl.style.display = 'block';
       descriptionEl.style.display = 'block';
