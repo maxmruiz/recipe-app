@@ -49,7 +49,9 @@
     <form class="search-2">
       <p>Find recipe and ingredients for cocktail:</p>
       <!-- <form action=""></form> -->
-      <input type="text" id="drinkInput" placeholder="Enter Cocktail Name" />
+      <input type="text" id="drinkInput" placeholder="Enter Cocktail Name" list="drinkSearchHistoryAttribute"/>
+      <datalist id="drinkSearchHistoryAttribute">
+      </datalist>
       <button class="searchBtn2" id="drinkInputButton">Search</button>
       <div class="ingredients" id="container-ingredients">
         <div id="cocktail-card">
