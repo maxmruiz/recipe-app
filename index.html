@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Poppins:wght@300;400;500;600;700&family=Sometype+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Recipe App</title>
   </head>
   <body>
@@ -13,57 +19,52 @@
     </header>
 
     <div class="search-1">
-
       <form action="" id="search-food">
         <p>Find recipe and ingredients for dish:</p>
-        <input type="text" id="foodInput" placeholder="Search for Recipe">
+        <input type="text" id="foodInput" placeholder="Search for Recipe" />
         <button class="searchBtn1">Search</button>
       </form>
 
-        <div class="food-cards">
-          <div class="food-card-container">
-            <h1 class="food-title"></h1>
-            <div class="food-card">
-              <img src="" class="food-image" alt=""/>
+      <div class="food-cards">
+        <div class="food-card-container">
+          <h1 class="food-title">Pizza</h1>
+          <div class="food-card">
+            <img
+              src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTh8fHxlbnwwfHx8fHw%3D"
+              class="food-image"
+              alt=""
+            />
 
-              <div class="recipe">
-                <ol>
-                  <li></li>
-                  <li></li>
-                </ol>
-              </div>
-
+            <div class="recipe">
+              <ul>
+                <li>cheese</li>
+                <li>mozzarella</li>
+              </ul>
             </div>
-
           </div>
-
         </div>
-
       </div>
+    </div>
 
-    <div class="search-2">
+    <form class="search-2">
       <p>Find recipe and ingredients for cocktail:</p>
+      <!-- <form action=""></form> -->
       <input type="text" id="drinkInput" placeholder="Enter Cocktail Name" />
       <button class="searchBtn2" id="drinkInputButton">Search</button>
       <div class="ingredients" id="container-ingredients">
         <div id="cocktail-card">
-            <img src="" class="cocktail-image" alt=""/>
+          <img src="" class="cocktail-image" alt="" />
         </div>
-        <ul id="ingredients-list">
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <ul id="ingredients-list"></ul>
       </div>
       <div class="recipe">
-        <ol id="cocktail-description">
-          <li></li>
-          <li></li>
-        </ol>
+        <ol id="cocktail-description"></ol>
       </div>
-    </div>
+    </form>
 
     <script src="./assets/js/script-cocktail.js"></script>
     <script src="./assets/js/recipe.js"></script>
+    <script src="./assets/js/localStorage.js"></script>
   </body>
 </html>
+
