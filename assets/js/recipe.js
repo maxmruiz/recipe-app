@@ -6,6 +6,7 @@ const foodCardContainer = document.querySelector(".food-card-container");
 console.log(foodCardContainer);
 
 button.addEventListener("click", (e) => {
+  foodCards.innerHTML = "";
   e.preventDefault();
   fetch(
     `https://api.edamam.com/api/recipes/v2?type=public&q=${foodInput.value}&app_id=9cbc2130&app_key=${API_KEY}`
@@ -17,8 +18,6 @@ button.addEventListener("click", (e) => {
       console.log(data.hits);
 
       data.hits.forEach((recipe) => {
-       
-
         const div = document.createElement("div");
         const foodTitle = document.createElement("h1");
         const foodCardDiv = document.createElement("div");
@@ -51,11 +50,7 @@ button.addEventListener("click", (e) => {
 
         div.appendChild(foodCardDiv);
 
-      
-      //  div.
-
         foodCards.appendChild(div);
-
       });
     });
 });
