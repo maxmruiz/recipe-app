@@ -98,6 +98,10 @@ h1 {
   border-radius: 5px;
 }
 
+.search-1 form button{
+  margin-bottom:10px;
+}
+
 .search-1 form button,
 .search-2 button {
   width: 23%;

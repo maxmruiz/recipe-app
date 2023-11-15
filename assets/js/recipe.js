@@ -39,7 +39,6 @@ button.addEventListener("click", (e) => {
         foodImage.src = recipe.recipe.image;
 
         recipe.recipe.ingredientLines.forEach((recipe) => {
-          console.log(recipe);
           const recipeListItem = document.createElement("li");
           recipeListItem.innerText = recipe;
           recipeList.appendChild(recipeListItem);
@@ -51,6 +50,8 @@ button.addEventListener("click", (e) => {
         div.appendChild(foodCardDiv);
 
         foodCards.appendChild(div);
+
+        foodInput.value = ''
       });
     });
 });
