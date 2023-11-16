@@ -180,4 +180,7 @@ max-height: 200px;
     box-shadow: 25px 25px 30px rgba(138, 17, 230, 0.3);
     transition: box-shadow 0.3s ease-in-out;
   }
-  
+  h1 {
+    text-decoration: underline;
+    color: #101111; 
+  }
