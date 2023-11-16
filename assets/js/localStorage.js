@@ -4,12 +4,6 @@ var drinkInputFormEl = document.querySelector('.search-2');
 var datalist = document.getElementById('drinkSearchHistoryAttribute');
 
 
-//console.log("HEYYYY1")
-
-
-//drinkInputFormEl.addEventListener("click",addLocalStorageDrinks)
-
-var drinkHistory = []; // Replace this with your actual search history array
 var retrieveLocalStorageDrinks = function(){
     var arrayDrinkHistory = JSON.parse(localStorage.getItem('drinkSearchHistory'));
     if(arrayDrinkHistory==null){
@@ -29,21 +23,24 @@ var retrieveLocalStorageDrinks = function(){
 
 var addLocalStorageDrinks = function(event){
     event.preventDefault(); 
-    console.log("HEYYYY")
+   var drinkHistory = JSON.parse(localStorage.getItem('drinkSearchHistory'));
     var drinkInput = drinkInputEl.value
-    console.log("LLL//")
     console.log(drinkInput)
-    drinkHistory.push(drinkInput)
-    localStorage.setItem('drinkSearchHistory', JSON.stringify(drinkHistory));
-    //retrieveLocalStorageDrinks()
+    if(drinkHistory==null){
+        var drinkHistory = []; // Replace this with your actual search history array
+        drinkHistory.push(drinkInput)
+    }  
+    else{
+        drinkHistory = JSON.parse(localStorage.getItem('drinkSearchHistory'))
+        drinkHistory.push(drinkInput)
+        localStorage.setItem('drinkSearchHistory', JSON.stringify(drinkHistory));
 
-
-
-
+    }
+    retrieveLocalStorageDrinks()
 
 }
 
 
-//retrieveLocalStorageDrinks()
+retrieveLocalStorageDrinks()
 //drinkInputEl.addEventListener("click",retrieveLocalStorageDrinks)
 drinkInputButtonEl.addEventListener("click",addLocalStorageDrinks)
