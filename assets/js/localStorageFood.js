@@ -3,7 +3,7 @@ var foodInputButtonEl = document.querySelector('#foodInputBtn');
 var foodInputFormEl = document.querySelector('.search-1');
 var foodDatalist = document.getElementById('foodSearchHistoryAttribute');
 
-
+//Gets the food array from local storage and creates a dropdown menu with these array items so a user can click on a food they searched before. 
 var retrieveLocalStorageFood = function(){
     var arrayFoodHistory = JSON.parse(localStorage.getItem('foodSearchHistory'));
     if(arrayFoodHistory==null){
@@ -20,14 +20,14 @@ var retrieveLocalStorageFood = function(){
     });
 }
 
-
+//Gets the user input, adds to the array in local storage, and runs     retrieveLocalStorageFood()
 var addLocalStorageFoods = function(event){
     event.preventDefault(); 
    var foodHistory = JSON.parse(localStorage.getItem('foodSearchHistory'));
     var foodInput = foodInputEl.value
     console.log(foodInput)
     if(foodHistory==null){
-        var foodHistory = []; // Replace this with your actual search history array
+        var foodHistory = []; 
         foodHistory.push(foodInput)
         localStorage.setItem('foodSearchHistory', JSON.stringify(foodHistory));
     }  
