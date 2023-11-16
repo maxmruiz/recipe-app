@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <link href="/dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Poppins:wght@300;400;500;600;700&family=Sometype+Mono:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
 
     <title><a>Recipe App</a></title>
   </head>
@@ -24,7 +25,8 @@
       <form action="" id="search-food">
         <p>Find recipe and ingredients for dish:</p>
         <input type="text" id="foodInput" placeholder="Search for Recipe" />
-        <button class="searchBtn1">Search</button>
+         <!-- Skeleton css is the "button" class> -->
+        <button class="searchBtn1 button">Search</button>
       </form>
 
       <div class="food-cards">
@@ -50,11 +52,11 @@
 
     <form class="search-2">
       <p>Find recipe and ingredients for cocktail:</p>
-      <!-- <form action=""></form> -->
       <input type="text" id="drinkInput" placeholder="Enter Cocktail Name" list="drinkSearchHistoryAttribute"/>
       <datalist id="drinkSearchHistoryAttribute">
       </datalist>
-      <button class="searchBtn2" id="drinkInputButton">Search</button>
+     <!-- Skeleton css is the "button" class> -->
+      <button class="searchBtn2 button" id="drinkInputButton">Search</button>
       <div class="ingredients" id="container-ingredients">
         <div id="cocktail-card">
           <img src="" class="cocktail-image" alt="" />
