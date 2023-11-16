@@ -55,17 +55,23 @@
 
     <form class="search-2">
       <p>Find recipe and ingredients for cocktail:</p>
-      <input type="text" id="drinkInput" placeholder="Enter a Cocktail" list="drinkSearchHistoryAttribute"/>
-      <datalist id="drinkSearchHistoryAttribute">
-      </datalist>
-     <!-- Skeleton css is the "button" class> -->
+      <input
+        type="text"
+        id="drinkInput"
+        placeholder="Enter Cocktail Name"
+        list="drinkSearchHistoryAttribute"
+      />
+      <datalist id="drinkSearchHistoryAttribute"> </datalist>
       <button class="searchBtn2 button" id="drinkInputButton">Search</button>
+
       <div class="ingredients" id="container-ingredients">
+        <h1 class="cocktail-title"></h1>
         <div id="cocktail-card">
           <img src="" class="cocktail-image" alt="" />
         </div>
         <ul id="ingredients-list"></ul>
       </div>
+
       <div class="recipe">
         <ol id="cocktail-description"></ol>
       </div>

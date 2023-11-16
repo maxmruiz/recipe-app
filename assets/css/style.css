@@ -55,7 +55,7 @@ h1 {
   margin: 0;
   margin-bottom: 10px;
 }
-.food-card-container {
+.food-card-container, .ingredients {
   background: rgba(128, 128, 216, 0.468);
   padding: 20px;
   display: flex;
