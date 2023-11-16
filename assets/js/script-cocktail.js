@@ -34,7 +34,7 @@ var drinkSubmitHandler = function (event) {
                 console.log(i)
                 if(i===1){
                     var ObjectDrink = {
-                        name: drinkName,
+                        name: data.drinks[0][`strDrink`],
                         ingredients: [data.drinks[0][`strIngredient${i}`]],
                         amounts: [data.drinks[0][`strMeasure${i}`]],
                         description:data.drinks[0][`strInstructions`],
