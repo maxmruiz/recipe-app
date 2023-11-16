@@ -29,6 +29,7 @@ var drinkSubmitHandler = function (event) {
     fetch(apiDrink).then(function (response) {
         if (response.ok) {
           response.json().then(function (data) {
+          console.log(data)
           console.log(data.drinks[0])
           for(i=1;i<15;i++){
                 console.log(i)
