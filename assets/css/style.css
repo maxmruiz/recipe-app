@@ -172,11 +172,11 @@ max-width: 200px;
 max-height: 200px;
 }
 .search-2:hover {
-    box-shadow: 5px 5px 15px rgba(138, 17, 230, 0.3);
+    box-shadow: 25px 25px 30px rgba(138, 17, 230, 0.3);
     transition: box-shadow 0.3s ease-in-out;
   }
   .search-1:hover {
-    box-shadow: 5px 5px 15px rgba(138, 17, 230, 0.3);
+    box-shadow: 25px 25px 30px rgba(138, 17, 230, 0.3);
     transition: box-shadow 0.3s ease-in-out;
   }
   
