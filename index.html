@@ -24,9 +24,10 @@
     <div class="search-1">
       <form action="" id="search-food">
         <p>Find recipe and ingredients for dish:</p>
-        <input type="text" id="foodInput" placeholder="Search for Recipe" />
+        <input type="text" id="foodInput" placeholder="Search for Recipe" list="foodSearchHistoryAttribute"/>
+        <datalist id="foodSearchHistoryAttribute">
          <!-- Skeleton css is the "button" class> -->
-        <button class="searchBtn1 button">Search</button>
+        <button class="searchBtn1 button" id="foodInputBtn">Search</button>
       </form>
 
       <div class="food-cards">
@@ -68,6 +69,7 @@
       </div>
     </form>
 
+    <script src="./assets/js/localStorageFood.js"></script>
     <script src="./assets/js/script-cocktail.js"></script>
     <script src="./assets/js/recipe.js"></script>
     <script src="./assets/js/localStorageDrink.js"></script>
