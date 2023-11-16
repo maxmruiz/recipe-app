@@ -6,6 +6,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -83,9 +85,18 @@ h1 {
 .search-2 {
   width: 80%;
 }
-.search-1 form button:hover {
-    color: #0a0b0b; }
 
+/* Skeleton  */
+.search-1 form button:hover {
+    color: #5d42e6;
+    background-color: #9b90d8;
+ }
+ .search-2 button:hover {
+    color: #5d42e6;
+    background-color: #9b90d8;
+ }
+        
+    
 .search-1 form {
   display: flex;
   flex-direction: column;
