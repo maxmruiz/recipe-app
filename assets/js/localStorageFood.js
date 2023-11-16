@@ -1,7 +1,7 @@
 var foodInputEl = document.querySelector('#foodInput');
 var foodInputButtonEl = document.querySelector('#foodInputBtn');
 var foodInputFormEl = document.querySelector('.search-1');
-var datalist = document.getElementById('foodSearchHistoryAttribute');
+var foodDatalist = document.getElementById('foodSearchHistoryAttribute');
 
 
 var retrieveLocalStorageFood = function(){
@@ -11,12 +11,12 @@ var retrieveLocalStorageFood = function(){
     }
     console.log(arrayFoodHistory)
     // Clear existing options
-    datalist.innerHTML = '';
-    // Add options to the datalist
+    foodDatalist.innerHTML = '';
+    // Add options to the foodDatalist
     arrayFoodHistory.forEach(item => {
     const option = document.createElement('option');
     option.value = item;
-    datalist.appendChild(option);
+    foodDatalist.appendChild(option);
     });
 }
 
@@ -26,7 +26,7 @@ var addLocalStorageFoods = function(event){
    var foodHistory = JSON.parse(localStorage.getItem('foodSearchHistory'));
     var foodInput = foodInputEl.value
     console.log(foodInput)
-    if(drinkHistory==null){
+    if(foodHistory==null){
         var foodHistory = []; // Replace this with your actual search history array
         foodHistory.push(foodInput)
         localStorage.setItem('foodSearchHistory', JSON.stringify(foodHistory));
