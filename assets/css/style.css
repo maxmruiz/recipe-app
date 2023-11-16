@@ -16,6 +16,7 @@ h1 {
 }
 
 
+
 .food-cards{
   max-height: 390px;
   overflow:scroll;
@@ -82,6 +83,8 @@ h1 {
 .search-2 {
   width: 80%;
 }
+.search-1 form button:hover {
+    color: #0a0b0b; }
 
 .search-1 form {
   display: flex;
