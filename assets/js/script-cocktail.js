@@ -1,8 +1,8 @@
 var drinkNameEl = document.querySelector('#drinkInput');
 var submitDrinkEl = document.querySelector('#drinkInputButton');
-var ingredientsEl = document.querySelector('#ingredients-list');
-var descriptionEl = document.querySelector('#cocktail-description');
-var imageEl = document.querySelector('.cocktail-image');
+//var ingredientsEl = document.querySelector('#ingredients-list');
+//var descriptionEl = document.querySelector('#cocktail-description');
+//var imageEl = document.querySelector('.cocktail-image');
 const drinkCards = document.querySelector(".drink-cards");
 
 
