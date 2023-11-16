@@ -3,12 +3,13 @@ var submitDrinkEl = document.querySelector('#drinkInputButton');
 var ingredientsEl = document.querySelector('#ingredients-list');
 var descriptionEl = document.querySelector('#cocktail-description');
 var imageEl = document.querySelector('.cocktail-image');
+const drinkCards = document.querySelector(".drink-cards");
 
 
 //If a valid cocktail name, change all the history buttons, call "getDrinkRecipe"
 var drinkSubmitHandler = function (event) {
+    drinkCards.innerHTML = "";
     event.preventDefault();
-    console.log("TEST")
     var drinkName = drinkNameEl.value;
     var apiDrink = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+drinkName
     fetch(apiDrink).then(function (response) {
@@ -29,35 +30,32 @@ var drinkSubmitHandler = function (event) {
     fetch(apiDrink).then(function (response) {
         if (response.ok) {
           response.json().then(function (data) {
+          console.log("FULL OBJECT")
           console.log(data)
-          console.log(data.drinks[0])
-          for(i=1;i<15;i++){
-                console.log(i)
-                if(i===1){
-                    var ObjectDrink = {
-                        name: data.drinks[0][`strDrink`],
-                        ingredients: [data.drinks[0][`strIngredient${i}`]],
-                        amounts: [data.drinks[0][`strMeasure${i}`]],
-                        description:data.drinks[0][`strInstructions`],
-                        image: data.drinks[0][`strDrinkThumb`],
-                    };
-                    console.log(ObjectDrink.ingredients)
-                    imageEl.src = ObjectDrink.image;
-
+          //Loop through all drinks that API sends back 
+          for (j=0;j<data.drinks.length;j++){
+                //Loop through max of 15 ingredients for each drink and put in array. Put all needed information in an object, where the object attributes are either one value or an array. 
+                for(i=1;i<15;i++){
+                        console.log(i)
+                        if(i===1){
+                            var ObjectDrink = {
+                                name: data.drinks[j][`strDrink`],
+                                ingredients: [data.drinks[j][`strIngredient${i}`]],
+                                amounts: [data.drinks[j][`strMeasure${i}`]],
+                                description:data.drinks[j][`strInstructions`],
+                                image: data.drinks[j][`strDrinkThumb`],
+                            };
+                        }
+                        else{
+                            ObjectDrink.ingredients.push(data.drinks[j][`strIngredient${i}`])
+                            ObjectDrink.amounts.push(data.drinks[j][`strMeasure${i}`])
+                        }
                 }
-                else{
-                    ObjectDrink.ingredients.push(data.drinks[0][`strIngredient${i}`])
-                    ObjectDrink.amounts.push(data.drinks[0][`strMeasure${i}`])
-                }
-            //listIngredientsDrink.push(data.drinks[0][`strIngredient${i}`]);
-        }
-        //listIngredientsDrink = listIngredientsDrink.filter(ingredient => ingredient !== null);
-          console.log(ObjectDrink)
-          displayCocktailInformation(ObjectDrink)
+                //Display cocktail information below the input area. 
+                displayCocktailInformation(ObjectDrink)
+            }
           })
         }
-        
-       
         else {
             alert('Error: ' + response.statusText);
         }
@@ -65,56 +63,42 @@ var drinkSubmitHandler = function (event) {
     })
 };
 
-
+//Display cocktail information below the input area. 
 var displayCocktailInformation = function (ObjectDrink) {
-    ingredientsEl.innerHTML = ''; 
-    descriptionEl.innerHTML = '';
+    const div = document.createElement("div");
+    const drinkTitle = document.createElement("h1");
+    const drinkCardDiv = document.createElement("div");
+    const drinkImage = document.createElement("img");
+    const recipeDiv = document.createElement("div");
+    const recipeList = document.createElement("ul");
 
-    var cocktailDescriptionEl = document.createElement('li');
-    cocktailDescriptionEl.textContent = ObjectDrink.description
-   
-    console.log(cocktailDescriptionEl.textContent)
-    descriptionEl.appendChild(cocktailDescriptionEl);
+    div.classList.add("food-card-container");
+    drinkTitle.classList.add("food-title");
+    drinkCardDiv.classList.add("food-card");
+    drinkImage.classList.add("food-image");
+    recipeDiv.classList.add("recipe");
 
-    // if (repos.length === 0) {
-    //   repoContainerEl.textContent = 'No repositories found.';
-    //   return;
-    // }
-  
-   // repoSearchTerm.textContent = searchTerm;
-  
-    for (var i = 0; i < ObjectDrink.ingredients.length; i++) {
-      //var repoName = repos[i].owner.login + '/' + repos[i].name;
-      if(ObjectDrink.ingredients[i]==null){
-          continue
-      }
+    div.appendChild(drinkTitle);
 
-      var cocktailListEl = document.createElement('li');
-      cocktailListEl.textContent = ObjectDrink.ingredients[i]+" ("+ObjectDrink.amounts[i]+")"
-     
-      console.log(cocktailListEl.textContent)
-      ingredientsEl.appendChild(cocktailListEl);
+    drinkTitle.innerText = ObjectDrink.name;
 
+    drinkCardDiv.appendChild(drinkImage);
+    drinkImage.src = ObjectDrink.image;
 
-      
-  
+    ObjectDrink.ingredients.forEach((recipe) => {
+        if(recipe==null){
+            return
+        }
+        const recipeListItem = document.createElement("li");
+        recipeListItem.innerText = recipe;
+        recipeList.appendChild(recipeListItem);
+        recipeDiv.appendChild(recipeList);
+    });
 
-      ingredientsEl.style.display = 'block';
-      descriptionEl.style.display = 'block';
-      //var statusEl = document.createElement('span');
-      //statusEl.classList = 'flex-row align-center';
-  
-    //   if (repos[i].open_issues_count > 0) {
-    //     statusEl.innerHTML =
-    //       "<i class='fas fa-times status-icon icon-danger'></i>" + repos[i].open_issues_count + ' issue(s)';
-    //   } else {
-    //     statusEl.innerHTML = "<i class='fas fa-check-square status-icon icon-success'></i>";
-    //   }
-  
-     // repoEl.appendChild(statusEl);
-  
-      //repoContainerEl.appendChild(repoEl);
-    }
+    drinkCardDiv.appendChild(recipeDiv);
+    div.appendChild(drinkCardDiv);
+    drinkCards.appendChild(div);
+    drinkInput.value = ''
   };
 
 
