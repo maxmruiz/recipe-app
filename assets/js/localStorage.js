@@ -29,6 +29,7 @@ var addLocalStorageDrinks = function(event){
     if(drinkHistory==null){
         var drinkHistory = []; // Replace this with your actual search history array
         drinkHistory.push(drinkInput)
+        localStorage.setItem('drinkSearchHistory', JSON.stringify(drinkHistory));
     }  
     else{
         drinkHistory = JSON.parse(localStorage.getItem('drinkSearchHistory'))
