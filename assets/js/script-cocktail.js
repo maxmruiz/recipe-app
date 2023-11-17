@@ -8,6 +8,7 @@ const drinkCards = document.querySelector(".drink-cards");
 
 //If a valid cocktail name, change all the history buttons, call "getDrinkRecipe"
 var drinkSubmitHandler = function (event) {
+    drinkCards.style.overflow = "scroll";
     drinkCards.innerHTML = "";
     event.preventDefault();
     var drinkName = drinkNameEl.value;

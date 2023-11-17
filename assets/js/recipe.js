@@ -6,6 +6,7 @@ const foodCardContainer = document.querySelector(".food-card-container");
 console.log(foodCardContainer);
 
 button.addEventListener("click", (e) => {
+  foodCards.style.overflow = "scroll";
   foodCards.innerHTML = "";
   e.preventDefault();
   fetch(

@@ -27,11 +27,14 @@ h1 {
 
 .food-cards{
   max-height: 390px;
-  overflow:scroll;
 }
 .drink-cards{
   max-height: 390px;
-  overflow:scroll;
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  justify-content: center;
+  flex-direction: column;
 }
 .search-1 {
   display: flex;
@@ -149,10 +152,6 @@ h1 {
   border-radius: 5px;
 }
 
-.search-2 ul,
-.search-2 ol {
-  display: none;
-}
 
 /* .search-2 img {
   border-radius: 30px;
