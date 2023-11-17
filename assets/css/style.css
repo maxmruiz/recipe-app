@@ -33,7 +33,6 @@ h1 {
   display: flex;
   width: 100%;
   gap: 30px;
-  justify-content: center;
   flex-direction: column;
 }
 .search-1 {
