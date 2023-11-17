@@ -86,12 +86,17 @@ var displayCocktailInformation = function (ObjectDrink) {
     drinkCardDiv.appendChild(drinkImage);
     drinkImage.src = ObjectDrink.image;
 
-    ObjectDrink.ingredients.forEach((recipe) => {
+    ObjectDrink.ingredients.forEach((recipe,amounts) => {
         if(recipe==null){
             return
         }
         const recipeListItem = document.createElement("li");
-        recipeListItem.innerText = recipe;
+        if(ObjectDrink.amounts[amounts]==null){
+            recipeListItem.innerText = recipe;
+        }
+        else{
+            recipeListItem.innerText = ObjectDrink.amounts[amounts]+" "+recipe;
+        }
         recipeList.appendChild(recipeListItem);
         recipeDiv.appendChild(recipeList);
     });
