@@ -17,4 +17,5 @@ Note that this application uses Skeleton for some CSS styling.
 ## Deployed
 
 ## Screenshot
+![Screen Shot 2023-11-16 at 9 12 15 PM](https://github.com/maxmruiz/recipe-app/assets/15932648/84d00833-649f-414b-ac56-ea012a3291d5)
 
